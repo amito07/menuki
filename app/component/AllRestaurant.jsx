@@ -27,6 +27,27 @@ const AllRestaurant = () => {
         <Grid item xs={12} md={6} lg={3}>
           <RestaurantCard />
         </Grid>
+
+        <Grid item xs={12} md={6} lg={3}>
+          <RestaurantCard />
+        </Grid>
+        <Grid item xs={12} md={6} lg={3}>
+          <RestaurantCard />
+        </Grid>
+        <Grid item xs={12} md={6} lg={3}>
+          <RestaurantCard />
+        </Grid>
+        <Grid item xs={12} md={6} lg={3}>
+          <RestaurantCard />
+        </Grid>        <Grid item xs={12} md={6} lg={3}>
+          <RestaurantCard />
+        </Grid>
+        <Grid item xs={12} md={6} lg={3}>
+          <RestaurantCard />
+        </Grid>
+        <Grid item xs={12} md={6} lg={3}>
+          <RestaurantCard />
+        </Grid>
       </Grid>
     </>
   );

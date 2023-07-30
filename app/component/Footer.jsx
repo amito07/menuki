@@ -1,7 +1,18 @@
+import { footerContent, footerLinks, mainFooterStyle } from "../styles/footer";
+
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <div style={{ marginTop: "1.5rem" }}>
+      <footer style={mainFooterStyle}>
+        <div style={footerContent}>
+          <p>&copy; 2023 Your Website. All rights reserved.</p>
+          <ul style={footerLinks}>
+            <h2>Menuki</h2>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;
