@@ -1,23 +1,9 @@
+import { cardStyle, ggstyle } from "@/app/styles/commonCard";
 import { Typography } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Image from "next/image";
 
-const cardStyle = {
-  maxWidth: 345,
-  boxShadow: "-6px 12px 24px -7px rgba(0,0,0,0.75)",
-  borderRadius: "2%",
-};
-
-const ggstyle = {
-  padding: "1rem",
-  display: "flex",
-  alignItems: "center",
-  alignContent: "center",
-  flexDirection: "row",
-  flexWrap: "wrap",
-};
-
-const CommonCard = () => {
+const CommonCard = ({cardInfo}) => {
   return (
     <div style={cardStyle}>
       <div style={ggstyle}>
@@ -30,13 +16,13 @@ const CommonCard = () => {
       </div>
       <div style={ggstyle}>
         <Typography variant="h5" gutterBottom>
-          Cheese Burger
+          {cardInfo.product_name}
         </Typography>
       </div>
       <div style={ggstyle}>
         <Chip
           style={{ backgroundColor: "#34C840", color: "white" }}
-          label="10% Discount"
+          label={`${cardInfo.discount_amount} % Discount`}
         />
         <Chip
           style={{
@@ -44,7 +30,7 @@ const CommonCard = () => {
             backgroundColor: "#FFBD00",
             color: "black",
           }}
-          label="Takeout 2.0"
+          label={cardInfo.shop_name}
         />
       </div>
     </div>
