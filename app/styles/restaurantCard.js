@@ -22,6 +22,7 @@ export const ggstyle = {
 };
 
 export const tag1Style = {
+  marginLeft: "4px",
   backgroundColor: "#34C840",
   color: "white",
 };

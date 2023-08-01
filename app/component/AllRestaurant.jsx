@@ -2,7 +2,8 @@ import DinnerDiningIcon from "@mui/icons-material/DinnerDining";
 import { Divider, Grid, Stack, Typography } from "@mui/material";
 import RestaurantCard from "./common/RestaurantCard";
 
-const AllRestaurant = () => {
+const AllRestaurant = ({ all_restaurant }) => {
+  console.log('all_restaurant',all_restaurant)
   return (
     <>
       <div style={{ marginBottom: "1rem" }}>
@@ -15,39 +16,11 @@ const AllRestaurant = () => {
       </div>
       <Divider />
       <Grid container>
-        <Grid item xs={12} md={6} lg={3}>
-          <RestaurantCard />
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <RestaurantCard />
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <RestaurantCard />
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <RestaurantCard />
-        </Grid>
-
-        <Grid item xs={12} md={6} lg={3}>
-          <RestaurantCard />
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <RestaurantCard />
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <RestaurantCard />
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <RestaurantCard />
-        </Grid>        <Grid item xs={12} md={6} lg={3}>
-          <RestaurantCard />
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <RestaurantCard />
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <RestaurantCard />
-        </Grid>
+        {all_restaurant.map((el, index) => (
+          <Grid key={index} item xs={12} md={6} lg={3}>
+            <RestaurantCard restaurant = {el} />
+          </Grid>
+        ))}
       </Grid>
     </>
   );

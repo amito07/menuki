@@ -3,14 +3,14 @@ import {
   cardStyle,
   ggstyle,
   locationTagStyle,
-  tag1Style,
-  tag2Style,
+  tag1Style
 } from "@/app/styles/restaurantCard";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Chip, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
-const RestaurantCard = () => {
+const RestaurantCard = ({restaurant}) => {
+  console.log('restaurant',restaurant)
   const isMobile = useMediaQuery("(max-width: 425px)");
   return (
     <>
@@ -24,19 +24,23 @@ const RestaurantCard = () => {
           />
         </div>
         <div style={ggstyle}>
-          <Typography variant="h4" gutterBottom>
-            Chilox Restaurant
+          <Typography variant="h6" gutterBottom>
+            {restaurant.name}
           </Typography>
         </div>
         <div style={ggstyle}>
-          <Chip style={tag1Style} label="Pizza" />
-          <Chip style={tag2Style} label="Burger" />
+          {
+            restaurant.tags.map((el,index)=>(
+              <Chip key={index} style={tag1Style} label={el} />
+
+            ))
+          }
         </div>
 
         <div style={ggstyle}>
           <Chip
             style={locationTagStyle}
-            label="Location: Mirpur 1 Sony Cinema Hall"
+            label={restaurant.location}
             icon={<LocationOnIcon style={{ color: "white" }} />}
           />
         </div>

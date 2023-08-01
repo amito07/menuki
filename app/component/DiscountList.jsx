@@ -4,7 +4,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { carouselItem, responsive } from "../styles/discount";
 import CommonCard from "./common/CommonCard";
-const DiscountList = () => {
+const DiscountList = ({discount_product}) => {
+  console.log('discount_product',discount_product)
   return (
     <div>
       <div style={{ marginBottom: "1rem" }}>
@@ -23,21 +24,11 @@ const DiscountList = () => {
           autoPlay
           infinite
         >
-          <div style={carouselItem}>
-            <CommonCard />
-          </div>
-
-          <div style={carouselItem}>
-            <CommonCard />
-          </div>
-
-          <div style={carouselItem}>
-            <CommonCard />
-          </div>
-
-          <div style={carouselItem}>
-            <CommonCard />
-          </div>
+          {discount_product.map((el, index) => (
+            <div key={index} style={carouselItem}>
+              <CommonCard cardInfo = {el} />
+            </div>
+          ))}
         </Carousel>
       </div>
     </div>
