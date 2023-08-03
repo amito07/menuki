@@ -10,7 +10,6 @@ import { Chip, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
 const RestaurantCard = ({restaurant}) => {
-  console.log('restaurant',restaurant)
   const isMobile = useMediaQuery("(max-width: 425px)");
   return (
     <>
@@ -20,7 +19,8 @@ const RestaurantCard = ({restaurant}) => {
             style={{ borderRadius: "5px" }}
             width={isMobile ? 400 : 280}
             height={200}
-            src="/assets/images/discount/pro2.jpg"
+            alt="gg"
+            src={"http://menuki.noeticit.tech"+restaurant.image}
           />
         </div>
         <div style={ggstyle}>

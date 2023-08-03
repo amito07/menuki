@@ -11,7 +11,8 @@ const CommonCard = ({cardInfo}) => {
           style={{ borderRadius: "5px" }}
           width={310}
           height={250}
-          src="/assets/images/discount/pro2.jpg"
+          alt="gg"
+          src={"http://menuki.noeticit.tech"+cardInfo.img_url}
         />
       </div>
       <div style={ggstyle}>

@@ -1,8 +1,14 @@
 import DinnerDiningIcon from '@mui/icons-material/DinnerDining';
 import { Divider, Grid, Stack, Typography } from '@mui/material';
+import { useRouter } from 'next/navigation';
 import RestaurantCard from './common/RestaurantCard';
 
 const AllRestaurant = ({ all_restaurant }) => {
+  const route = useRouter();
+
+  const handleCardClick = (item) => {
+    route.push(`/restaurants/${item.restaurant_id}`)
+}
   return (
     <>
       <div style={{ marginBottom: "1rem" }}>
@@ -16,8 +22,8 @@ const AllRestaurant = ({ all_restaurant }) => {
       <Divider />
       <Grid container>
         {all_restaurant.map((el, index) => (
-          <Grid key={index} item xs={12} md={6} lg={3}>
-            <RestaurantCard restaurant = {el} />
+          <Grid onClick={()=>handleCardClick(el)} key={index} item xs={12} md={6} lg={3}>
+            <RestaurantCard  restaurant = {el} />
           </Grid>
         ))}
       </Grid>

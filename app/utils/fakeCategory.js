@@ -1,1 +1,1 @@
-export const categories = ['Pizza', 'Burger', 'Chicken Fry', 'Biriyani'];
+export const categories = ['popular', 'pizza'];

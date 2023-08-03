@@ -6,7 +6,7 @@ import { sliders } from "../utils/fakeData";
 const Item = ({ item, isMobile }) => {
   return (
     <Paper sx={isMobile ? { height: "40vh" } : { height: "80vh" }}>
-      <Image src={item.img_url} fill />
+      <Image alt="gg" src={item.img_url} fill />
     </Paper>
   );
 };

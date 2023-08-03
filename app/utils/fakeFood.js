@@ -1,46 +1,4 @@
 export const fakeFoods = [
-<<<<<<< HEAD
-  {
-    name: "Pizza",
-    img_url: "/assets/images/pizza.jpg",
-    category: "Pizza",
-    desc: "Lorem ipsum es int at",
-    actual_price: "$3.52",
-    discounted_price: "$1.50",
-  },
-  {
-    name: "Kebab",
-    img_url: "/assets/images/kebab.jpg",
-    category: "Kebab",
-    desc: "Lorem ipsum es int at",
-    actual_price: "$4.48",
-    discounted_price: "$1.32",
-  },
-  {
-    name: "Biriyani",
-    img_url: "/assets/images/biriyani.jpg",
-    category: "Biriyani",
-    desc: "Lorem ipsum es int at",
-    actual_price: "$2.14",
-    discounted_price: "$1.50",
-  },
-  {
-    name: "Hotdog",
-    img_url: "/assets/images/hotdog.jpg",
-    category: "Hotdog",
-    desc: "Lorem ipsum es int at",
-    actual_price: "$1.52",
-    discounted_price: "$1.12",
-  },
-  {
-    name: "Burger",
-    img_url: "/assets/images/burger.jpg",
-    category: "Burger",
-    desc: "Lorem ipsum es int at",
-    actual_price: "$7.52",
-    discounted_price: "$2.50",
-  },
-=======
     {
         name: 'Pizza',
         img_url: '/assets/images/pizza.jpg',
@@ -111,5 +69,4 @@ export const fakeFoods = [
             { variant: 'small', actual_price: '$9.00', discounted_price: '$5.50' },
         ],
     },
->>>>>>> a8f4fa6ea65bc2d3ce441b35126218da1933aca8
 ];

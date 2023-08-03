@@ -1,68 +1,83 @@
-<<<<<<< HEAD
 "use client";
-import Nav from "@/app/component/Nav";
-import { sliders } from "@/app/utils/fakeData";
+import FoodSection from "@/app/component/FoodSection";
+import {
+  categoryStyle,
+  selectedCategoryStyle,
+} from "@/app/styles/singleRestaurantStyle";
 import { fakeFoods } from "@/app/utils/fakeFood";
-import { Card, CardMedia, Grid } from "@mui/material";
-import CardContent from "@mui/material/CardContent";
-import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
-import React, { useEffect, useState } from "react";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
+import axios from "axios";
+import Image from "next/image";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Link } from "react-scroll";
 
-const RestaurantPage = ({ params }) => {
+const RestaurantPage = () => {
   const [categoryList, setCategoryList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [foods, setFoods] = React.useState(fakeFoods);
-  const selectedCategoryStyle = {
-    backgroundColor: "#32ce4c",
-    color: "#fff",
-    border: "none",
-    borderRadius: "5%",
-    padding: "10px 20px",
-    textAlign: "center",
-    textDecoration: "none",
-    cursor: "pointer",
+  const [restaurantInfo, setRestaurantInfo] = useState({});
+  const [foodItem, setFoodItem] = useState([])
+  const params = useParams();
+
+  const fetchData = async () => {
+    const result = await axios.get(
+      `http://menuki.noeticit.tech/api/restaurant/${+params.id}`
+    );
+    setRestaurantInfo(result.data)
+    setFoodItem(result.data.food_detail)
   };
+
+  useEffect(() => {
+    fetchData();
+  }, [params]);
+
+  const isMobile = useMediaQuery("(max-width: 425px)");
+
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
   };
   const loadCategories = (fakeFoods) => {
     const categories = [];
-    fakeFoods.map((food) => categories.push(food.category));
+    foodItem.map((food) => categories.push(food.tag));
     const newCategories = new Set(categories);
     setCategoryList(Array.from(newCategories));
   };
   useEffect(() => {
-    setFoods(fakeFoods);
+    fakeFoods.map((food) => (food.expanded = false));
     loadCategories(fakeFoods);
-  }, [foods]);
+  }, [foodItem]);
+
   return (
-    <div style={{ width: "100%" }}>
-      <div style={{ marginTop: "80px", marginLeft: "0px" }}>
-        <img
-          src={sliders[0].img_url}
-          alt=""
-          style={{
-            width: "98vw",
-            backgroundSize: "cover",
-            height: "40vh",
-            borderRadius: "25px",
-            margin: "10px",
-          }}
-        />
-      </div>
-      <div style={{ marginTop: "5px", paddingLeft: "15px" }}>
-        <h1>Dishes</h1>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          marginLeft: "10vw",
-          marginRight: "10vw",
-          justifyContent: "space-between",
-        }}
-      >
+    <>
+      <Grid container>
+        <Grid item xs={12}>
+          <div style={isMobile ? { marginTop: "60px" } : { marginTop: "80px" }}>
+            <div sx={isMobile ? { height: "40vh" } : { height: "10vh" }}>
+              <Image
+                src={"http://menuki.noeticit.tech"+restaurantInfo.cover_pic}
+                width={isMobile ? 400 : 1280}
+                height={isMobile ? 200 : 500}
+                alt="gg"
+              />
+            </div>
+          </div>
+        </Grid>
+      </Grid>
+      <Grid container justifyContent="space-between" alignItems="center">
+        <Grid item xs={12} md={4}>
+          <Typography style={{ fontWeight: "bold" }} gutterBottom variant="h4">
+            {restaurantInfo.restaurant_name}
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={3} display="flex" flexDirection="row">
+          <LocationOnIcon style={{ fontSize: "2rem" }} />
+          <Typography gutterBottom variant="h5">
+          {restaurantInfo.address}
+          </Typography>
+        </Grid>
+      </Grid>
+      <div style={categoryStyle}>
         <div style={{ display: "flex" }}>
           <h3
             style={
@@ -81,323 +96,40 @@ const RestaurantPage = ({ params }) => {
           </h3>
           {categoryList &&
             categoryList.map((category) => (
-              <h3
-=======
-'use client';
-import React, { useEffect, useState } from 'react';
-import { styled } from '@mui/material/styles';
-import { sliders } from '@/app/utils/fakeData';
-import { categories } from '@/app/utils/fakeCategory';
-import TextField from '@mui/material/TextField';
-import { Card, CardHeader, CardMedia, Collapse, Grid } from '@mui/material';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { fakeFoods } from '@/app/utils/fakeFood';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import IconButton from '@mui/material/IconButton';
-
-const ExpandMore = styled((props) => {
-    const { expand, ...other } = props;
-    return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-    }),
-}));
-
-const RestaurantPage = ({ params }) => {
-    const { id } = params;
-    const [restaurantName, setRestaurantName] = useState('');
-    const [coverImgUrl, setCoverImgUrl] = useState('');
-    const [categoryList, setCategoryList] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState('');
-    const [foods, setFoods] = React.useState([]);
-    const [showFood, setShowFood] = React.useState([]);
-    const [expanded, setExpanded] = React.useState([]);
-    const selectedCategoryStyle = {
-        backgroundColor: 'orange',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '5%',
-        padding: '10px 20px',
-        textAlign: 'center',
-        textDecoration: 'none',
-        cursor: 'pointer',
-    };
-    const handleCategorySelect = (category) => {
-        setSelectedCategory(category);
-        if (category) {
-            const selectedCategoryFood = [];
-            foods.map((food) => {
-                if (food.category === category) {
-                    selectedCategoryFood.push(food);
-                }
-            });
-            setShowFood(selectedCategoryFood);
-        } else {
-            setShowFood(foods);
-        }
-    };
-    const loadCategories = (Foods) => {
-        const categories = [];
-        Foods.map((food) => categories.push(food.category));
-        const newCategories = new Set(categories);
-        setCategoryList(Array.from(newCategories));
-    };
-
-    const handleExpandClick = (index) => {
-        const newExpandedList = [...foods];
-        newExpandedList[index].expanded = !newExpandedList[index].expanded;
-        setExpanded(newExpandedList);
-    };
-
-    const handleFoodSearch = (e) =>{
-        const newSearchedfoods = foods.filter(food=> (food.name.toLowerCase()).includes(e.target.value.toLowerCase()));
-        setShowFood(newSearchedfoods);
-    }   
-
-    const fetchFoodData = async (id) => {
-        const res = await fetch(`${process.env.base_url}/api/restaurant/${id}`);
-        if (res.status === 200) {
-            const data = await res.json();
-            console.log(data);
-            setRestaurantName(data.restaurant_name);
-            setCoverImgUrl(data.restaurant_img_url);
-            data?.food_list.map((food) => (food.expanded = false));
-            loadCategories(data.food_list);
-            setFoods(data.food_list);
-            setShowFood(data.food_list);
-        }
-    };
-    useEffect(() => {
-        fetchFoodData(id);
-    }, []);
-    return (
-        <div style={{ width: '100%' }}>
-            <div style={{ marginTop: '80px', marginLeft: '0px' }}>
-                {coverImgUrl && (
-                    <img
-                        src={`${process.env.base_url}${coverImgUrl}`}
-                        alt=""
-                        style={{
-                            width: '98vw',
-                            backgroundSize: 'cover',
-                            height: '40vh',
-                            borderRadius: '25px',
-                            margin: '10px',
-                        }}
-                    />
-                )}
-            </div>
-            <div style={{ marginTop: '5px', paddingLeft: '15px' }}>
-                <h1>Dishes</h1>
-            </div>
-            <div
->>>>>>> a8f4fa6ea65bc2d3ce441b35126218da1933aca8
-                style={{
-                  paddingLeft: "20px",
-                  paddingRight: "20px",
-                  marginTop: "0px",
-                  paddingTop: "10px",
-                }}
-<<<<<<< HEAD
-                onClick={(e) => handleCategorySelect(category)}
+              <Link
+                to={category}
+                spy={true}
+                smooth={true}
+                offset={-80}
+                duration={500}
               >
-                <span
-                  style={
-                    selectedCategory == category ? selectedCategoryStyle : {}
-                  }
+                <h3
+                  style={{
+                    paddingLeft: "20px",
+                    paddingRight: "20px",
+                    marginTop: "0px",
+                    paddingTop: "10px",
+                  }}
+                  onClick={(e) => handleCategorySelect(category)}
                 >
-                  {category}
-                </span>
-              </h3>
+                  <span
+                    style={
+                      selectedCategory == category ? selectedCategoryStyle : {}
+                    }
+                  >
+                    {category}
+                  </span>
+                </h3>
+              </Link>
             ))}
-=======
-            >
-                <div style={{ display: 'flex' }}>
-                    <h3
-                        style={
-                            selectedCategory === ''
-                                ? {
-                                      ...selectedCategoryStyle,
-                                      paddingLeft: '10px',
-                                      paddingRight: '10px',
-                                      marginTop: '0px',
-                                  }
-                                : { marginLeft: '10px', marginRight: '10px', marginTop: '10px' }
-                        }
-                        onClick={(e) => handleCategorySelect('')}
-                    >
-                        All
-                    </h3>
-                    {categoryList &&
-                        categoryList.map((category) => (
-                            <h3
-                                style={{
-                                    paddingLeft: '20px',
-                                    paddingRight: '20px',
-                                    marginTop: '0px',
-                                    paddingTop: '10px',
-                                }}
-                                onClick={(e) => handleCategorySelect(category)}
-                            >
-                                <span style={selectedCategory == category ? selectedCategoryStyle : {}}>
-                                    {category}
-                                </span>
-                            </h3>
-                        ))}
-                </div>
-                <div style={{ marginTop: '0px' }}>
-                    <TextField id="outlined-basic" label="Search by Name" variant="outlined" size="small" onChange={handleFoodSearch}/>
-                </div>
-            </div>
-            <div>
-                <Grid container spacing={3} sx={{ justifyContent: 'center', marginTop: '5px' }}>
-                    {showFood &&
-                        showFood.map((food, index) => (
-                            <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={index}>
-                                <Card sx={{ maxWidth: 345 }}>
-                                    <CardMedia
-                                        sx={{ height: 180 }}
-                                        image={`${process.env.base_url}${food.img_url}`}
-                                        title="green iguana"
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            {food.name ?? ''}
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            {food.desc ?? ''}
-                                        </Typography>
-                                        <div style={{ display: 'flex' }}>
-                                            {food.discount_available == 1 ? (
-                                                <Typography variant="body2" color="text.secondary">
-                                                    <del>{`৳${food.actual_price}`}</del>
-                                                </Typography>
-                                            ) : (
-                                                <Typography variant="body" color="text.primary">
-                                                    {`৳${food.actual_price}`}
-                                                </Typography>
-                                            )}
-                                            {food.discount_available == 1 ? (
-                                                <Typography
-                                                    variant="body"
-                                                    color="text.primary"
-                                                    sx={{ marginLeft: '5px' }}
-                                                >
-                                                    {`৳${food.discounted_price}`}
-                                                </Typography>
-                                            ) : (
-                                                ''
-                                            )}
-
-                                            <ExpandMore
-                                                expand={food.expanded}
-                                                onClick={(e) => handleExpandClick(index)}
-                                                aria-expanded={expanded}
-                                                aria-label="show more"
-                                            >
-                                                <ExpandMoreIcon />
-                                            </ExpandMore>
-                                        </div>
-                                    </CardContent>
-                                    <Collapse in={food.expanded} timeout="auto" unmountOnExit>
-                                        <CardContent>
-                                            <Typography paragraph>Variants:</Typography>
-                                            <hr />
-                                            {food?.variants.map((vari, index) => (
-                                                <div
-                                                    style={{ display: 'flex', justifyContent: 'space-between' }}
-                                                    key={index}
-                                                >
-                                                    <Typography variant="h6">{vari.variant}</Typography>
-                                                    <div style={{ display: 'flex', marginTop: '3px' }}>
-                                                        {food.discount_available == 1 ? (
-                                                            <Typography variant="body2" color="text.secondary">
-                                                                <del>{vari.actual_price}</del>
-                                                            </Typography>
-                                                        ) : (
-                                                            ''
-                                                        )}
-                                                        <Typography
-                                                            variant="body"
-                                                            color="text.primary"
-                                                            style={{ marginLeft: '5px' }}
-                                                        >
-                                                            {food.discount_available == 1
-                                                                ? vari.discounted_price
-                                                                : vari.actual_price}
-                                                        </Typography>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                            <hr />
-                                            <Typography paragraph>{food.desc}</Typography>
-                                        </CardContent>
-                                    </Collapse>
-                                </Card>
-                            </Grid>
-                        ))}
-                </Grid>
-            </div>
->>>>>>> a8f4fa6ea65bc2d3ce441b35126218da1933aca8
-        </div>
-        <div style={{ marginTop: "0px" }}>
-          <TextField
-            id="outlined-basic"
-            label="Search by Name"
-            variant="outlined"
-            size="small"
-          />
         </div>
       </div>
       <div>
-        <Nav/>
+        {foodItem.map((el) => (
+          <FoodSection food={el} />
+        ))}
       </div>
-      <div>
-        <Grid
-          container
-          spacing={3}
-          sx={{ justifyContent: "center", marginTop: "5px" }}
-        >
-          {foods &&
-            foods.map((food, index) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={index}>
-                <Card sx={{ maxWidth: 345 }}>
-                  <CardMedia
-                    sx={{ height: 180 }}
-                    image={food.img_url}
-                    title="green iguana"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {food.name ?? ""}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Lizards are a widespread group
-                    </Typography>
-                    <div style={{ display: "flex" }}>
-                      <Typography variant="body2" color="text.secondary">
-                        <del>{food.actual_price}</del>
-                      </Typography>
-                      <Typography
-                        variant="body"
-                        color="text.primary"
-                        sx={{ marginLeft: "5px" }}
-                      >
-                        {food.actual_price}
-                      </Typography>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-        </Grid>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -28,7 +28,7 @@ export const mobilenavbar = {
 
 export const logo_container = {
   display: "flex",
-  alignItems: "center",
+  alignItems: "center"
 };
 
 export const logoStyle = {

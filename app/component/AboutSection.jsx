@@ -14,6 +14,7 @@ const AboutSection = () => {
     >
       <Grid item xs={12} md={5}>
         <Image
+          alt="gg"
           width={isMobile ? 300 : 500}
           height={isMobile ? 300 : 500}
           src="/assets/images/section.png"
