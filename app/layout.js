@@ -1,4 +1,3 @@
-"use client";
 import { ThemeProvider } from "@mui/material";
 import { Inter } from "next/font/google";
 import Footer from "./component/Footer";
