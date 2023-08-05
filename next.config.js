@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env:{
-        base_url: "http://menuki.noeticit.tech",
+        base_url: "https://admin.noeticit.tech",
     },
     images: {
-        domains: ['menuki.noeticit.tech'], // Add your domain(s) to this array
+        domains: ['admin.noeticit.tech'], // Add your domain(s) to this array
     },
 }
 
