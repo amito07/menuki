@@ -67,7 +67,7 @@ const FoodSection = ({ food }) => {
                         color="text.primary"
                         sx={{ marginLeft: "5px" }}
                       >
-                        {`${food.actual_price} BDT`}
+                        {`${food.discounted_price} BDT`}
                       </Typography>
                       <ExpandMore
                         expand={food.expanded}
