@@ -22,7 +22,7 @@ const AboutSection = () => {
       </Grid>
       <Grid item xs={12} md={5}>
         <p>
-          <span style={{ color: "#34C840", fontSize: "6rem" }}>Unveiling</span>
+          <span style={ isMobile ? { color: "#34C840", fontSize: "3rem" }: { color: "#34C840", fontSize: "6rem" }}>Unveiling</span>
           <br></br>{" "}
           <span style={{ fontSize: "3rem" }}>
             The Restaurant's Menu with a{" "}
