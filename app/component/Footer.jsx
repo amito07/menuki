@@ -6,7 +6,7 @@ const Footer = () => {
     <div style={{ marginTop: "1.5rem" }}>
       <footer style={mainFooterStyle}>
         <div style={footerContent}>
-          <p>&copy; 2023 Your Website. All rights reserved.</p>
+          <p>&copy; All rights reserved.</p>
           <ul style={footerLinks}>
             <h2>Menuki</h2>
           </ul>

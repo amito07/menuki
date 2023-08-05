@@ -4,8 +4,14 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { carouselItem, responsive } from "../styles/discount";
 import CommonCard from "@/app/component/common/CommonCard";
+import { useRouter } from 'next/navigation';
 
 const DiscountList = ({discount_product}) => {
+  const route = useRouter();
+
+  const handleCardClick = (item)=>{
+    route.push(`/restaurants/${item.shop_id}`)
+  } 
   return (
     <div>
       <div style={{ marginBottom: "1rem" }}>
@@ -25,7 +31,7 @@ const DiscountList = ({discount_product}) => {
           infinite
         >
           {discount_product.map((el, index) => (
-            <div key={index} style={carouselItem}>
+            <div onClick={()=>handleCardClick(el)} key={index} style={carouselItem}>
               <CommonCard cardInfo = {el} />
             </div>
           ))}

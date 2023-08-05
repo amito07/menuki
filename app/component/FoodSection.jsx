@@ -4,6 +4,7 @@ import {
   Card,
   CardContent,
   CardMedia,
+  Chip,
   Collapse,
   Divider,
   Grid,
@@ -54,49 +55,64 @@ const FoodSection = ({ food }) => {
                   title="green iguana"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {food.name}
-                  </Typography>
-                  {food.discount_available ? (
-                    <div style={{ display: "flex" }}>
-                      <Typography variant="body2" color="text.secondary">
-                        <del>{food.actual_price}</del>
+                  <Grid container justifyContent="space-between">
+                    <Grid item xs={8}>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {food.name}
                       </Typography>
-                      <Typography
-                        variant="body"
-                        color="text.primary"
-                        sx={{ marginLeft: "5px" }}
-                      >
-                        {`${food.discounted_price} BDT`}
-                      </Typography>
-                      <ExpandMore
-                        expand={food.expanded}
-                        onClick={(e) => handleExpandClick(index)}
-                        aria-expanded={expanded}
-                        aria-label="show more"
-                      >
-                        <ExpandMoreIcon />
-                      </ExpandMore>
-                    </div>
-                  ) : (
-                    <div style={{ display: "flex" }}>
-                      <Typography
-                        variant="body"
-                        color="text.primary"
-                        sx={{ marginLeft: "5px" }}
-                      >
-                        {`${food.actual_price} BDT`}
-                      </Typography>
-                      <ExpandMore
-                        expand={food.expanded}
-                        onClick={(e) => handleExpandClick(index)}
-                        aria-expanded={expanded}
-                        aria-label="show more"
-                      >
-                        <ExpandMoreIcon />
-                      </ExpandMore>
-                    </div>
-                  )}
+                      {food.discount_available ? (
+                        <div style={{ display: "flex" }}>
+                          <Typography variant="body2" color="text.secondary">
+                            <del>{food.actual_price}</del>
+                          </Typography>
+                          <Typography
+                            variant="body"
+                            color="text.primary"
+                            sx={{ marginLeft: "5px" }}
+                          >
+                            {`${food.discounted_price} BDT`}
+                          </Typography>
+                          <ExpandMore
+                            expand={food.expanded}
+                            onClick={(e) => handleExpandClick(index)}
+                            aria-expanded={expanded}
+                            aria-label="show more"
+                          >
+                            <ExpandMoreIcon />
+                          </ExpandMore>
+                        </div>
+                      ) : (
+                        <div style={{ display: "flex" }}>
+                          <Typography
+                            variant="body"
+                            color="text.primary"
+                            sx={{ marginLeft: "5px" }}
+                          >
+                            {`${food.actual_price} BDT`}
+                          </Typography>
+                          <ExpandMore
+                            expand={food.expanded}
+                            onClick={(e) => handleExpandClick(index)}
+                            aria-expanded={expanded}
+                            aria-label="show more"
+                          >
+                            <ExpandMoreIcon />
+                          </ExpandMore>
+                        </div>
+                      )}
+                    </Grid>
+                    <Grid item xs={4}>
+                      <Chip
+                        label={
+                          food.is_available === "1"
+                            ? "Available"
+                            : "Not Available"
+                        }
+
+                        style={food.is_available === "1" ? {backgroundColor:"green", color:"white"}: {backgroundColor:"red", color:"white"} }
+                      />
+                    </Grid>
+                  </Grid>
                 </CardContent>
                 <Collapse in={food.expanded} timeout="auto" unmountOnExit>
                   <CardContent>
