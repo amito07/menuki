@@ -25,7 +25,7 @@ const RestaurantPage = () => {
 
   const fetchData = async () => {
     const result = await axios.get(
-      `http://menuki.noeticit.tech/api/restaurant/${params.id}`
+      `https://admin.noeticit.tech/api/restaurant/${params.id}`
     );
 
     setRestaurantInfo(result.data);
