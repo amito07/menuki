@@ -20,7 +20,7 @@ const RestaurantCard = ({restaurant}) => {
             width={isMobile ? 400 : 280}
             height={200}
             alt="gg"
-            src={"http://menuki.noeticit.tech"+restaurant.image}
+            src={"https://admin.noeticit.tech"+restaurant.image}
           />
         </div>
         <div style={ggstyle}>

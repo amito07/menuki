@@ -49,7 +49,7 @@ const FoodSection = ({ food }) => {
               <Card sx={{ maxWidth: isMobile ? 420 : 345 }}>
                 <CardMedia
                   sx={{ height: 180 }}
-                  image={"http://menuki.noeticit.tech" + food.img_url}
+                  image={"https://admin.noeticit.tech" + food.img_url}
                   title="green iguana"
                 />
                 <CardContent>
@@ -107,6 +107,7 @@ const FoodSection = ({ food }) => {
                           display: "flex",
                           justifyContent: "space-between",
                         }}
+                        key={index}
                       >
                         <Typography variant="h6">{el.variant}</Typography>
                         <div

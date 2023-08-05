@@ -21,7 +21,6 @@ const RestaurantPage = () => {
   const [foodItem, setFoodItem] = useState([]);
   const [gg, setGG] = useState(false);
   const params = useParams();
-  console.log("params", params);
 
   const fetchData = async () => {
     const result = await axios.get(
@@ -36,8 +35,6 @@ const RestaurantPage = () => {
   useEffect(() => {
     fetchData();
   }, [params.id]);
-
-  console.log("restaurantInfo", restaurantInfo);
 
   const isMobile = useMediaQuery("(max-width: 425px)");
 
@@ -71,7 +68,7 @@ const RestaurantPage = () => {
                     >
                       <Image
                         alt="gg"
-                        src={`http://menuki.noeticit.tech${restaurantInfo.cover_pic}`}
+                        src={`https://admin.noeticit.tech${restaurantInfo.cover_pic}`}
                         fill
                       />
                     </Paper>
@@ -119,13 +116,14 @@ const RestaurantPage = () => {
                 All
               </h3>
               {categoryList &&
-                categoryList.map((category) => (
+                categoryList.map((category,index) => (
                   <Link
                     to={category}
                     spy={true}
                     smooth={true}
                     offset={-80}
                     duration={500}
+                    key={index}
                   >
                     <h3
                       style={{
