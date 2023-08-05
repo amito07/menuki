@@ -24,13 +24,14 @@ const RestaurantPage = () => {
     const result = await axios.get(
       `http://menuki.noeticit.tech/api/restaurant/${+params.id}`
     );
+
     setRestaurantInfo(result.data)
     setFoodItem(result.data.food_detail)
   };
 
   useEffect(() => {
     fetchData();
-  }, [params]);
+  }, [params.id]);
 
   const isMobile = useMediaQuery("(max-width: 425px)");
 
@@ -55,7 +56,7 @@ const RestaurantPage = () => {
           <div style={isMobile ? { marginTop: "60px" } : { marginTop: "80px" }}>
             <div sx={isMobile ? { height: "40vh" } : { height: "10vh" }}>
               <Image
-                src={"http://menuki.noeticit.tech"+restaurantInfo.cover_pic}
+                src='/assets/images/1.jpg'
                 width={isMobile ? 400 : 1280}
                 height={isMobile ? 200 : 500}
                 alt="gg"
@@ -125,8 +126,8 @@ const RestaurantPage = () => {
         </div>
       </div>
       <div>
-        {foodItem.map((el) => (
-          <FoodSection food={el} />
+        {foodItem.map((el,index) => (
+          <FoodSection key={index} food={el} />
         ))}
       </div>
     </>
