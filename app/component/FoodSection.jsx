@@ -1,5 +1,5 @@
 "use client";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -12,8 +12,8 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
-import { useState } from "react";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;

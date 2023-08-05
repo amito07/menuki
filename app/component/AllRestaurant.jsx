@@ -1,7 +1,7 @@
 import DinnerDiningIcon from '@mui/icons-material/DinnerDining';
 import { Divider, Grid, Stack, Typography } from '@mui/material';
 import { useRouter } from 'next/navigation';
-import RestaurantCard from './common/RestaurantCard';
+import RestaurantCard from '@/app/component/common/RestaurantCard';
 
 const AllRestaurant = ({ all_restaurant }) => {
   const route = useRouter();

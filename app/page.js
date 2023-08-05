@@ -2,10 +2,10 @@
 import { CircularProgress } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import AboutSection from "./component/AboutSection";
-import AllRestaurant from "./component/AllRestaurant";
-import DiscountList from "./component/DiscountList";
-import Slider from "./component/Slider";
+import AboutSection from "@/app/component/AboutSection";
+import AllRestaurant from "@/app/component/AllRestaurant";
+import DiscountList from "@/app/component/DiscountList";
+import Slider from "@/app/component/Slider";
 
 const divStyle = {
   width: "100%",

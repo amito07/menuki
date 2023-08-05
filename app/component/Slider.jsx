@@ -1,7 +1,8 @@
+"use client";
 import { Grid, Paper, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import Carousel from "react-material-ui-carousel";
-import { sliders } from "../utils/fakeData";
+import { sliders } from "@/app/utils/fakeData";
 
 const Item = ({ item, isMobile }) => {
   return (

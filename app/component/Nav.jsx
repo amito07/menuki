@@ -1,3 +1,4 @@
+"use client";
 import { useMediaQuery } from "@mui/material";
 import { useRouter } from 'next/navigation';
 import {
@@ -7,7 +8,7 @@ import {
   mobileLogoStyle,
   mobilenavbar,
   navbar,
-} from "../styles/nav";
+} from "@/app/styles/nav";
 const Nav = () => {
   const route = useRouter();
   const isMobile = useMediaQuery("(max-width: 425px)");

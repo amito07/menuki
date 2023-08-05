@@ -1,4 +1,5 @@
-import { footerContent, footerLinks, mainFooterStyle } from "../styles/footer";
+"use client";
+import { footerContent, footerLinks, mainFooterStyle } from "@/app/styles/footer";
 
 const Footer = () => {
   return (

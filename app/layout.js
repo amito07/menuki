@@ -1,8 +1,8 @@
 import { ThemeProvider } from "@mui/material";
 import { Inter } from "next/font/google";
-import Footer from "./component/Footer";
-import Nav from "./component/Nav";
-import theme from "./theme";
+import Footer from "@/app/component/Footer";
+import Nav from "@/app/component/Nav";
+import theme from "@/app/theme";
 
 const inter = Inter({ subsets: ["latin"] });
 
