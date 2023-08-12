@@ -95,7 +95,7 @@ const RestaurantPage = () => {
             </Grid>
           </Grid>
           <div style={categoryStyle}>
-            <div style={{ display: "flex", overflowY: "scroll" }}>
+            <div style={isMobile ? { display: "flex", overflowX: "scroll" } : {display: "flex"}}>
               <h3
                 style={
                   selectedCategory === ""
