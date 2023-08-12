@@ -34,26 +34,34 @@ export default function Home() {
 
   return (
     <>
-      {loading ? (
-        <CircularProgress />
-      ) : (
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ width: "100%", marginTop: "2rem" }}>
-            <Slider />
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ width: "100%", marginTop: "2rem" }}>
+          <Slider />
+        </div>
+        <div style={divStyle}>
+          <AboutSection />
+        </div>
+        {loading ? (
+          <div style={{ display: "flex", alignItems: "center", justifyContent:"center" }}>
+            <CircularProgress />
           </div>
-          <div style={divStyle}>
-            <AboutSection />
-          </div>
-          {discountPrice.length && (
+        ) : (
+          discountPrice.length && (
             <div style={divStyle}>
               <DiscountList discount_product={discountPrice} />
             </div>
-          )}
+          )
+        )}
+        {loading ? (
+          <div style={{ display: "flex", alignItems: "center", justifyContent:"center" }}>
+            <CircularProgress />
+          </div>
+        ) : (
           <div style={divStyle}>
             <AllRestaurant all_restaurant={allRestaurant} />
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 }
