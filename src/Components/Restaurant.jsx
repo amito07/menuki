@@ -1,5 +1,8 @@
 import { MapIcon, StarIcon } from "@heroicons/react/16/solid";
+import { useNavigate } from "react-router-dom";
+
 const Restaurant = () => {
+  const navigate = useNavigate();
   return (
     <div className="container mx-auto p-2 lg:p-0">
       <div className="relative">
@@ -16,7 +19,7 @@ const Restaurant = () => {
             return (
               <div
                 key={i}
-                className="bg-black text-white hover:bg-white hover:text-black p-1 rounded-lg transition-all duration-500 cursor-pointer"
+                className="bg-black text-white hover:bg-white hover:text-black p-1 rounded-lg transition-all duration-500 cursor-pointer" onClick={() => navigate(`/restaurant/${i + 1}`)}
               >
                 <img
                   src={`/restaurants/${i + 1}.jpg`}
