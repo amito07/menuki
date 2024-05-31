@@ -39,7 +39,7 @@ const Foods = ({ title, sub_title, foods }) => {
                   </div>
                   <div className="">
                     <img
-                      src={`/src/assets/restaurants/${1+index}.jpg`}
+                      src={`/restaurants/${1+index}.jpg`}
                       alt="food"
                       className="rounded-lg object-contain w-72"
                     />

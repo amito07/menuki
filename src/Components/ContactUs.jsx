@@ -14,7 +14,7 @@ const ContactUs = () => {
               necessitatibus amet earum labore iure exercitationem corrupti
               atque non unde sunt blanditiis!
             </p>
-            <div className="animate-slidein700 opacity-0 grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 w-[80%] max-auto md:w-full">
+            <div className="animate-slidein700 opacity-0 grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 w-[80%] max-auto md:w-full text-center">
               <div className="text-white bg-black grid place-items-center p-10 rounded-lg cursor-pointer hover:bg-gradient-to-r from-cyan-500 to-blue-500 w-[50%] mx-auto lg:w-full">
                 <h1 className="font-bold text-4xl">100+</h1>
                 <p className="text-xl font-bold">Restaurant and Cafe</p>

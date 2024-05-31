@@ -20,15 +20,15 @@ const AboutUs = () => {
         <div className="text-white col-span-12 lg:col-span-6">
           <div className="flex flex-col md:flex-row justify-center items-center md:justify-between">
             <img
-              src="/src/assets/gif/Pizza sharing.gif"
+              src="/gif/Pizza sharing.gif"
               alt=""
               className="w-60"
             />
-            <img src="/src/assets/gif/Scan to pay.gif" alt="" className="w-60" />
+            <img src="/gif/Scan to pay.gif" alt="" className="w-60" />
           </div>
           <div className="flex justify-center">
             <img
-              src="/src/assets/gif/Take Away.gif"
+              src="/gif/Take Away.gif"
               alt=""
               className="w-60"
             />

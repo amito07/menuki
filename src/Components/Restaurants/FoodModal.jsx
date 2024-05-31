@@ -14,7 +14,7 @@ const FoodModal = ({ onClose }) => {
         <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-[80%]">
           <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <img
-              src="/src/assets/restaurants/4.jpg"
+              src="/restaurants/4.jpg"
               alt="image"
               className="w-full rounded-lg"
             />

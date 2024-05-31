@@ -9,42 +9,42 @@ const Branding = () => {
         <div className="relative flex flex-row overflow-x-hidden">
       <div className="py-12 animate-marquee whitespace-nowrap flex flex-row">
         <img
-          src="/src/assets/brands/1.jpeg"
+          src="/brands/1.jpeg"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/1.jpeg"
+          src="/brands/1.jpeg"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/2.jpeg"
+          src="/brands/2.jpeg"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/3.jpg"
+          src="/brands/3.jpg"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/4.jpeg"
+          src="/brands/4.jpeg"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/5.png"
+          src="/brands/5.png"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/7.jpeg"
+          src="/brands/7.jpeg"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/8.png"
+          src="/brands/8.png"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
@@ -52,42 +52,42 @@ const Branding = () => {
 
       <div className="absolute top-0 py-12 animate-marquee2 whitespace-nowrap flex flex-row">
       <img
-          src="/src/assets/brands/1.jpeg"
+          src="/brands/1.jpeg"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/1.jpeg"
+          src="/brands/1.jpeg"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/2.jpeg"
+          src="/brands/2.jpeg"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/3.jpg"
+          src="/brands/3.jpg"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/4.jpeg"
+          src="/brands/4.jpeg"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/5.png"
+          src="/brands/5.png"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/7.jpeg"
+          src="/brands/7.jpeg"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
         <img
-          src="/src/assets/brands/8.png"
+          src="/brands/8.png"
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />

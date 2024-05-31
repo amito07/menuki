@@ -19,7 +19,7 @@ const Restaurant = () => {
                 className="bg-black text-white hover:bg-white hover:text-black p-1 rounded-lg transition-all duration-500 cursor-pointer"
               >
                 <img
-                  src={`/src/assets/restaurants/${i + 1}.jpg`}
+                  src={`/restaurants/${i + 1}.jpg`}
                   alt="test"
                   className="w-full"
                 />

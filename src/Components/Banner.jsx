@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="relative w-full h-[50vh] overflow-hidden">
       <img
-        src="/src/assets/images/cover2.jpg"
+        src="/images/cover2.jpg"
         className="absolute inset-0 w-full h-full object-cover opacity-20"
         alt="Background"
       />
@@ -21,7 +21,7 @@ const Banner = () => {
           </h1>
         </div>
         <div className="text-white">
-            <img src="/src/assets/images/img3.png" className="w-48 md:w-60" alt="" />
+            <img src="/images/img3.png" className="w-48 md:w-60" alt="" />
         </div>
       </div>
     </div>
