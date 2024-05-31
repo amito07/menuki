@@ -4,17 +4,17 @@ const ContactUs = () => {
       <div className="pb-[4rem] lg:pt-[8rem]">
         <div className="grid grid-cols-12 w-full gap-[3rem] items-center">
           <div className="col-span-12 lg:col-span-6 p-2 md:p-0">
-            <h1 className="text-white">
+            <h1 className="animate-slidein300 opacity-0 text-white">
               <span className="font-bold text-4xl md:text-6xl lg:text-8xl xl:text-9xl">Restaurant</span>{" "}
               <span className="font-semibold text-2xl md:text-4xl lg:text-6xl">and Cafe</span>
             </h1>
-            <p className="text-[15px] text-slate-300 w-[80%] mt-6">
+            <p className="animate-slidein500 opacity-0 text-[15px] text-slate-300 w-[80%] mt-6">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
               aperiam, numquam excepturi eos molestias iste autem odio quasi
               necessitatibus amet earum labore iure exercitationem corrupti
               atque non unde sunt blanditiis!
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 w-[80%] max-auto md:w-full">
+            <div className="animate-slidein700 opacity-0 grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 w-[80%] max-auto md:w-full">
               <div className="text-white bg-black grid place-items-center p-10 rounded-lg cursor-pointer hover:bg-gradient-to-r from-cyan-500 to-blue-500 w-[50%] mx-auto lg:w-full">
                 <h1 className="font-bold text-4xl">100+</h1>
                 <p className="text-xl font-bold">Restaurant and Cafe</p>

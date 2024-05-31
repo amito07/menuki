@@ -10,7 +10,7 @@ const MobileNav = ({nav, closeNav}) => {
               <div className='nav-link-mobile'>Projects</div>
               <div className='nav-link-mobile'>Contact</div>
           </div>
-          <div onClick={closeNav} className='absolute z-[10000000] cursor-pointer top-[2rem] right-[2rem] w-[2rem] h-[2rem] text-yellow-400'>
+          <div onClick={closeNav} className='absolute z-[10000000] cursor-pointer top-[2rem] right-[2rem] w-[2rem] h-[2rem] text-green-500'>
               <XMarkIcon/>
           </div>
           

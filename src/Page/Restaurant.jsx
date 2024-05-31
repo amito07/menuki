@@ -7,7 +7,7 @@ import { FoodItems } from "../utils/function";
 
 const RestaurantPage = () => {
   return (
-    <div className="w-full">
+    <div className="overflow-x-hidden">
       <Banner />
       <Information/>
       <Deals/>

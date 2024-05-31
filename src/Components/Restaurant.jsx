@@ -1,7 +1,7 @@
 import { MapIcon, StarIcon } from "@heroicons/react/16/solid";
 const Restaurant = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto p-2 lg:p-0">
       <div className="relative">
         <div className="absolute bottom-24 sm:bottom-12">
           <div className="h-1 w-20 bg-green-500" />

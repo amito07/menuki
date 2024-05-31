@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="relative w-full h-[50vh] overflow-hidden">
       <img
-        src="/src/assets/images/cover.jpg"
+        src="/src/assets/images/cover2.jpg"
         className="absolute inset-0 w-full h-full object-cover opacity-20"
         alt="Background"
       />
