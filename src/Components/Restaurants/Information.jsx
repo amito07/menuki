@@ -5,7 +5,7 @@ import {
 } from "@heroicons/react/16/solid";
 const Information = () => {
   return (
-    <div className="mt-20 grid grid-cols-12 mb-10">
+    <div className="mt-20 grid grid-cols-12 mb-10 p-3 md:p-0">
       <div className="col-span-12 lg:col-start-3 lg:col-span-4 space-y-2">
         <h1 className="text-4xl font-bold text-white">Kacchi Bhai</h1>
         <span className="flex items-center text-white font-semibold gap-x-2">
