@@ -1,6 +1,6 @@
 const Deals = () => {
   return (
-    <div className="container mx-auto mb-10">
+    <div className="container mx-auto mb-10 p-2 md:p-0">
       <div className="grid grid-cols-12">
         <div className="col-span-12">
         <h1 className="text-white font-bold text-4xl">Available Deals</h1>

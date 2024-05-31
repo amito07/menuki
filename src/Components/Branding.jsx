@@ -50,7 +50,7 @@ const Branding = () => {
         />
       </div>
 
-      <div className="absolute top-0 py-12 animate-marquee2 whitespace-nowrap flex flex-row">
+      {/* <div className="absolute top-0 py-12 animate-marquee2 whitespace-nowrap flex flex-row">
       <img
           src="/brands/1.jpeg"
           alt="brand1"
@@ -91,7 +91,7 @@ const Branding = () => {
           alt="brand1"
           className="mx-4 w-36 h-auto"
         />
-      </div>
+      </div> */}
     </div>
     </div>
     </div>

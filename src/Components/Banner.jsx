@@ -10,7 +10,7 @@ const Banner = () => {
       />
       <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-around">
         <div className="max-w-lg md:max-w-xl p-2"> 
-          <h1 className="text-[35px] md:text-[50px] text-white font-bold">
+          <h1 className="text-[25px] md:text-[50px] text-white font-bold">
             Unveiling The Restaurants Menu with a Simple Scan
           </h1>
           <h1 className="text-white text-4xl">
